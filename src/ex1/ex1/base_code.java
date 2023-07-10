@@ -1,7 +1,7 @@
 package ex1.ex1;
 import java.util.Scanner;
 
-public class structure1 {
+public class base_code {
     public static void main(String[] args) {
 
         int kor1, kor2, kor3;
