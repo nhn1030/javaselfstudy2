@@ -1,10 +1,10 @@
-package ex1.ex1;
+package ex1.bottomUp;
 import java.util.Scanner;
 
 public class structure_code {
 
 
-    static int[] kors = new int[3]; // 국어 성적 배열
+    static int[] korlist = new int[3]; // 국어 성적 배열
 
     public static void main(String[] args) {
 
@@ -26,16 +26,16 @@ public class structure_code {
 
                 // ------ 성적 입력 부분 -------
                 case 1:
-                    inputGrades(kors, scan);
+                    inputGrades(korlist, scan);
                     break;
                 // ------ 성적 출력 부분 -------
                 case 2:
-                    printGrades(kors);
+                    printGrades(korlist);
                     break; // Add break statement here
 
                 case 3:
                     System.out.println("프로그램을 종료합니다.");
-                    break;
+                    return;
 
                 default:
                     System.out.println("입력 오류!");

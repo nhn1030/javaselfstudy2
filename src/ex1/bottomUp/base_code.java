@@ -1,4 +1,4 @@
-package ex1.ex1;
+package ex1.bottomUp;
 import java.util.Scanner;
 
 public class base_code {
