@@ -23,10 +23,10 @@ public class structure_code {
 
         int kor = exam.kor;
         int eng = exam.eng;
-        int math = exam.kor;
+        int math = exam.math;
 
         int total = kor + eng + math;
-        float avg = total/3.0f;
+        float avg = (float)total/3.0f; // total 앞에 (float)은 total 변수를 float으로 형변환 하겠다는 뜻
 
         System.out.printf("국어 : %d\n", kor);
         System.out.printf("영어 : %d\n", eng);
