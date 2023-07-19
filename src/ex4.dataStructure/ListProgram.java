@@ -2,20 +2,22 @@ package ex4.dataStructure;
 
 import java.util.Scanner;
 
-public class program {
+public class ListProgram {
     public static void main (String[] args) {
-        ExamProgram[] exams = new ExamProgram[3];
-        int current = 0;
+
+        ExamList list = new ExamList();
+        list.exams = new ExamProgram[3];
+        list.current = 0;
 
         for (int i = 0; i < 3; i++) {
-            exams[i] = new ExamProgram();
+            list.exams[i] = new ExamProgram();
         }
 
-        inputList(exams, current);
-        printList(exams, current);
+        inputList(list);
+        printList(list);
     }
 
-    private static void inputList(ExamProgram[] exams, int current) {
+    private static void inputList(ExamList list) {
 
             Scanner scan = new Scanner(System.in);
 
@@ -60,20 +62,23 @@ public class program {
             exam.eng = eng;
             exam.math = math;
 
-            exams[current] = exam;
-            current++;
+            list.exams[list.current] = exam;
+            list.current++;
 
 
 
 
     }
 
-    private static void printList(ExamProgram[] exams, int size) {
+    private static void printList(ExamList list) {
 
         System.out.println("+---------------------------------+");
         System.out.println("|             성적출력              |");
         System.out.println("+---------------------------------+");
         System.out.println();
+
+        int size = list.current;
+        ExamProgram[] exams = list.exams;
 
         for (int i = 0; i < size; i++) {
             ExamProgram exam = exams[i];
