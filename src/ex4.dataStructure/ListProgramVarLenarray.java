@@ -24,7 +24,7 @@ public class ListProgramVarLenarray {
             switch (menu) {
 
                 case 1 -> inputList(list);
-                case 2 -> printList(list);
+                case 2 -> printList(list, 2);
                 case 3 -> {
                     System.out.println("프로그램을 종료합니다.");
                     return;
@@ -64,7 +64,7 @@ public class ListProgramVarLenarray {
 
 
             do {
-                System.out.println("국어 점수 입력 : ");
+                System.out.print("국어 점수 입력 : ");
                 kor = scan.nextInt();
 
                 if (kor < 0 || 100 < kor) {
@@ -73,7 +73,7 @@ public class ListProgramVarLenarray {
             } while (kor < 0 || 100 < kor);
 
             do {
-                System.out.println("영어 점수 입력 : ");
+                System.out.print("영어 점수 입력 : ");
                 eng = scan.nextInt();
 
                 if (eng < 0 || 100 < eng) {
@@ -82,7 +82,7 @@ public class ListProgramVarLenarray {
             } while (eng < 0 || 100 < eng);
 
             do {
-                System.out.println("수학 점수 입력 : ");
+                System.out.print("수학 점수 입력 : ");
                 math = scan.nextInt();
 
                 if (math < 0 || 100 < math) {
@@ -109,11 +109,9 @@ public class ListProgramVarLenarray {
 
                 // 3. list.exams가 temp 배열을 참조하도록 함.
                 list.exams = temp;
-
-
             }
 
-            list.exams[list.current] = exam;
+            list.exams[list.current] = exam; // 반복횟수
             list.current++;
 
 
@@ -122,16 +120,22 @@ public class ListProgramVarLenarray {
     }
 
     private static void printList(ExamList list) {
+        printList(list, list.current);
+    } // 지금 까지 입력된 모든 성적을 출력해주는 함수
+
+    private static void printList(ExamList list, int size) { //size 크기 만큼의 성적을 출력해주는 함수
 
         System.out.println("+---------------------------------+");
         System.out.println("|             성적출력              |");
         System.out.println("+---------------------------------+");
         System.out.println();
 
-        int size = list.current;
+
+        //int size = list.current;
         ExamProgram[] exams = list.exams;
 
         for (int i = 0; i < size; i++) {
+
             ExamProgram exam = exams[i];
 
             int kor = exam.kor;
@@ -144,6 +148,8 @@ public class ListProgramVarLenarray {
             System.out.printf("수학 : %d\n", math);
             System.out.printf("총점 : %3d\n", total);
             System.out.printf("평균 : %6.2f\n", avg);
+            System.out.println("---------------------------------");
+
 
         }
     }
