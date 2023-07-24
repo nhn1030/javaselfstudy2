@@ -1,6 +1,6 @@
 package ex4.dataStructure;
 
-public class ExamProgram {
+public class Exam {
     int kor;
     int eng;
     int math;
