@@ -7,7 +7,6 @@ public class Program {
     public static void main (String[] args) {
 
         ExamList list = new ExamList();
-        list.init();
 
         int menu;
         boolean keepLoop = true;
@@ -30,7 +29,7 @@ public class Program {
         }
 
 
-    private static int inputMenu() {
+    public static int inputMenu() {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("\n+---------------------------------+");
