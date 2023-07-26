@@ -17,7 +17,6 @@ public class ExamList {
         int kor, eng, math;
 
 
-
         do {
             System.out.print("국어 점수 입력 : ");
             kor = scan.nextInt();
@@ -46,10 +45,15 @@ public class ExamList {
         } while (math < 0 || 100 < math);
 
 
+
+        /*
         Exam exam = new Exam();
         exam.setKor(kor);
         exam.setEng(eng);
         exam.setMath(math);
+        */
+
+        Exam exam = new Exam (kor, eng, math);
 
         Exam[] exams = this.exams;
         int size = this.current;
@@ -98,8 +102,9 @@ public class ExamList {
             int eng = exam.getEng();
             int math = exam.getMath();
 
-            int total = kor + eng + math;
-            float avg = (float)total/3.0f; // total 앞에 (float)은 total 변수를 float으로 형변환 하겠다는 뜻
+            int total = exam.total();
+            float avg = exam.avg(); // total 앞에 (float)은 total 변수를 float으로 형변환 하겠다는 뜻
+
             System.out.printf("국어 : %d\n", kor);
             System.out.printf("영어 : %d\n", eng);
             System.out.printf("수학 : %d\n", math);
