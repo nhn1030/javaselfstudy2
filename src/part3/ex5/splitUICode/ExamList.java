@@ -1,9 +1,7 @@
 package part3.ex5.splitUICode;
 
 public class ExamList {
-    public int size() {
-        return current;
-    }
+
     private Exam[] exams;
     private int current;
 
@@ -28,11 +26,17 @@ public class ExamList {
         this.exams[this.current] = exam; // 반복횟수
         this.current++;
     }
+
     public Exam get(int i) {
         return this.exams[i];
     }
     public ExamList() {
+        // Aggregation Has A 관계
         this.exams = new Exam[3];
         this.current = 0;
+    }
+
+    public int size() {
+        return current;
     }
 }
