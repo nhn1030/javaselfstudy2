@@ -1,6 +1,6 @@
 package part3.ex6.abstraCt;
 
-public class Exam {
+public abstract class Exam {
     private int kor;
     private int eng;
     private int math;

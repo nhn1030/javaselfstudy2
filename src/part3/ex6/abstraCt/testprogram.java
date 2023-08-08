@@ -6,6 +6,8 @@ public class testprogram {
 
         Exam exam = new Exam(1, 1, 1);
 
+        System.out.println(exam.total());
+
 
     }
 }
